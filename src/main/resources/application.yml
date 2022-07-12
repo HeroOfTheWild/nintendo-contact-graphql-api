@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: ${RUNTIME_ENV:dev}
+  application:
+    name: nintendo-contact-graphql-api
+
+server:
+  port: 8082
+  servlet:
+    context-path: /nintendo/contact
+  max-http-header-size: 32000
+
+graphql:
+  servlet:
+    mapping: /graphql
+    corsEnabled: false

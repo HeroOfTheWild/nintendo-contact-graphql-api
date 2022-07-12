@@ -1,0 +1,20 @@
+{
+    "data": {
+        "addresses": [
+            {
+                "id": "n1nt3nd0-11a8-4d5b-beda-c831ba120f71",
+                "nintendoId": "nin0001",
+                "purpose": "BOTH",
+                "country": "USA",
+                "stateProvince": "Texas",
+                "cityName": "San Antonio",
+                "streetAddress": "1985 Nintendo Avenue Apt 1964",
+                "regionCode": null,
+                "postalCode": "78240",
+                "startDate": "2022-07-05",
+                "endDate": null,
+                "lastModified": "2022-07-05T23:54:00-05:00"
+            }
+        ]
+    }
+}

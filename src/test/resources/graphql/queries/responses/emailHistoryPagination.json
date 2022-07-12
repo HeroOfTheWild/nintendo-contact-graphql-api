@@ -1,0 +1,44 @@
+{
+    "data": {
+        "emailHistories": {
+            "pageInfo": {
+                "startCursor": "AAAAAGLFFHg=",
+                "endCursor": "AAAAAGLCcmg=",
+                "hasPreviousPage": true,
+                "hasNextPage": true
+            },
+            "edges": [
+                {
+                    "cursor": "AAAAAGLFFHg=",
+                    "node": {
+                        "id": "n1nt3nd0-11a8-4d5b-beda-3ma1la120f72",
+                        "nintendoId": "nin0001",
+                        "emailAddress": "mario@switch.com",
+                        "purpose": "PERSONAL",
+                        "lastModified": "2022-07-05T23:50:00-05:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAGLDw+g=",
+                    "node": {
+                        "id": "n1nt3nd0-11a8-4d5b-beda-3ma1la120f71",
+                        "nintendoId": "nin0001",
+                        "emailAddress": "mario@nintendo.com",
+                        "purpose": "WORK",
+                        "lastModified": "2022-07-04T23:54:00-05:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAGLCcmg=",
+                    "node": {
+                        "id": "n1nt3nd0-11a8-4d5b-beda-3ma1la120f71",
+                        "nintendoId": "nin0001",
+                        "emailAddress": "mario@nintendo.com",
+                        "purpose": "WORK",
+                        "lastModified": "2022-07-03T23:54:00-05:00"
+                    }
+                }
+            ]
+        }
+    }
+}

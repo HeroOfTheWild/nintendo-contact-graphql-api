@@ -1,0 +1,27 @@
+query {
+    addressHistories(id: "nin0002", rows: 2, before: "AAAAAGLFFWg=") {
+        pageInfo {
+            startCursor
+            endCursor
+            hasNextPage
+            hasPreviousPage
+        }
+        edges {
+            cursor
+            node {
+                id
+                nintendoId
+                purpose
+                country
+                stateProvince
+                cityName
+                streetAddress
+                regionCode
+                postalCode
+                startDate
+                endDate
+                lastModified
+            }
+        }
+    }
+}

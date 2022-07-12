@@ -1,0 +1,32 @@
+query {
+    addresses(id: "nin001") {
+        id
+        nintendoId
+        purpose
+        country
+        stateProvince
+        cityName
+        streetAddress
+        regionCode
+        postalCode
+        startDate
+        endDate
+        lastModified
+    }
+    phones(id: "nin001") {
+        id
+        nintendoId
+        type
+        purpose
+        countryCode
+        number
+        lastModified
+    }
+    emails(id: "nin001") {
+        id
+        nintendoId
+        purpose
+        emailAddress
+        lastModified
+    }
+}

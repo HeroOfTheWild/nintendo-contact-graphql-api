@@ -1,0 +1,20 @@
+query {
+    emailHistories(id: "nin0001", rows: 3) {
+        pageInfo {
+            startCursor
+            endCursor
+            hasPreviousPage
+            hasNextPage
+        }
+        edges {
+            cursor
+            node {
+                id
+                nintendoId
+                emailAddress
+                purpose
+                lastModified
+            }
+        }
+    }
+}

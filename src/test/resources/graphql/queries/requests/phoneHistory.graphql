@@ -1,0 +1,22 @@
+query {
+    phoneHistories(id: "nin0004", rows: 4) {
+        pageInfo {
+            startCursor
+            endCursor
+            hasPreviousPage
+            hasNextPage
+        }
+        edges {
+            cursor
+            node {
+                id
+                nintendoId
+                type
+                purpose
+                countryCode
+                number
+                lastModified
+            }
+        }
+    }
+}

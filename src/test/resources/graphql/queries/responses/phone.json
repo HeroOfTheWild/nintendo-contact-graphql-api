@@ -1,0 +1,15 @@
+{
+    "data": {
+        "phones": [
+            {
+                "id": "n1nt3nd0-13a8-4d5b-beda-ph0n3a120f71",
+                "nintendoId": "nin0004",
+                "type": "MOBILE",
+                "purpose": "BOTH",
+                "countryCode": "+1",
+                "number": "2104892777",
+                "lastModified": "2022-07-05T23:54:00-05:00"
+            }
+        ]
+    }
+}

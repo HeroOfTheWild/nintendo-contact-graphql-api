@@ -1,0 +1,48 @@
+{
+    "data": {
+        "addressHistories": {
+            "pageInfo": {
+                "startCursor": "AAAAAGLFFHg=",
+                "endCursor": "AAAAAGKdiGg=",
+                "hasNextPage": true,
+                "hasPreviousPage": true
+            },
+            "edges": [
+                {
+                    "cursor": "AAAAAGLFFHg=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-c831ba120f71",
+                        "nintendoId": "nin0002",
+                        "purpose": "MAILING",
+                        "country": "USA",
+                        "stateProvince": "Texas",
+                        "cityName": "San Antonio",
+                        "streetAddress": "PO Box 1964",
+                        "regionCode": null,
+                        "postalCode": "78210",
+                        "startDate": "2022-07-05",
+                        "endDate": null,
+                        "lastModified": "2022-07-05T23:50:00-05:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAGKdiGg=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-c831ba120f71",
+                        "nintendoId": "nin0002",
+                        "purpose": "MAILING",
+                        "country": "USA",
+                        "stateProvince": "Texas",
+                        "cityName": "San Antonio",
+                        "streetAddress": "PO Box 1964",
+                        "regionCode": null,
+                        "postalCode": "78210",
+                        "startDate": "2022-07-05",
+                        "endDate": null,
+                        "lastModified": "2022-06-05T23:54:00-05:00"
+                    }
+                }
+            ]
+        }
+    }
+}

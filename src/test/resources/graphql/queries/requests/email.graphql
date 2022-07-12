@@ -1,0 +1,9 @@
+query {
+    emails(id: "nin0002") {
+        id
+        emailAddress
+        lastModified
+        nintendoId
+        purpose
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "data": {
+        "addressHistories": {
+            "pageInfo": {
+                "startCursor": "AAAAAGLFFWg=",
+                "endCursor": "AAAAAGLFFHg=",
+                "hasNextPage": true,
+                "hasPreviousPage": false
+            },
+            "edges": [
+                {
+                    "cursor": "AAAAAGLFFWg=",
+                    "node": {
+                        "id": "n1nt3nd0-12a8-4d5b-beda-c831ba120f71",
+                        "nintendoId": "nin0002",
+                        "purpose": "RESIDENTIAL",
+                        "country": "USA",
+                        "stateProvince": "Texas",
+                        "cityName": "San Antonio",
+                        "streetAddress": "1985 Nintendo Avenue Apt 2002",
+                        "regionCode": null,
+                        "postalCode": "78240",
+                        "startDate": "2022-07-05",
+                        "endDate": null,
+                        "lastModified": "2022-07-05T23:54:00-05:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAGLFFHg=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-c831ba120f71",
+                        "nintendoId": "nin0002",
+                        "purpose": "MAILING",
+                        "country": "USA",
+                        "stateProvince": "Texas",
+                        "cityName": "San Antonio",
+                        "streetAddress": "PO Box 1964",
+                        "regionCode": null,
+                        "postalCode": "78210",
+                        "startDate": "2022-07-05",
+                        "endDate": null,
+                        "lastModified": "2022-07-05T23:50:00-05:00"
+                    }
+                }
+            ]
+        }
+    }
+}

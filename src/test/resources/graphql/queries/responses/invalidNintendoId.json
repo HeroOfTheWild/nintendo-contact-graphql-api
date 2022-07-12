@@ -1,0 +1,41 @@
+{
+    "errors": [
+        {
+            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'addresses'",
+            "locations": [
+                {
+                    "line": 2,
+                    "column": 15
+                }
+            ],
+            "extensions": {
+                "classification": "ValidationError"
+            }
+        },
+        {
+            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'phones'",
+            "locations": [
+                {
+                    "line": 16,
+                    "column": 12
+                }
+            ],
+            "extensions": {
+                "classification": "ValidationError"
+            }
+        },
+        {
+            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'emails'",
+            "locations": [
+                {
+                    "line": 25,
+                    "column": 12
+                }
+            ],
+            "extensions": {
+                "classification": "ValidationError"
+            }
+        }
+    ],
+    "data": null
+}

@@ -1,0 +1,50 @@
+{
+    "data": {
+        "phoneHistories": {
+            "pageInfo": {
+                "startCursor": "AAAAAGH/Yng=",
+                "endCursor": "AAAAAF4Sy3g=",
+                "hasPreviousPage": true,
+                "hasNextPage": false
+            },
+            "edges": [
+                {
+                    "cursor": "AAAAAGH/Yng=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-ph0n3a120f71",
+                        "nintendoId": "nin0004",
+                        "type": "MOBILE",
+                        "purpose": "BOTH",
+                        "countryCode": "+1",
+                        "number": "2104442772",
+                        "lastModified": "2022-02-05T23:54:00-06:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAF/9OXg=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-ph0n3a120f71",
+                        "nintendoId": "nin0004",
+                        "type": "MOBILE",
+                        "purpose": "BOTH",
+                        "countryCode": "+1",
+                        "number": "2104442773",
+                        "lastModified": "2021-01-11T23:54:00-06:00"
+                    }
+                },
+                {
+                    "cursor": "AAAAAF4Sy3g=",
+                    "node": {
+                        "id": "n1nt3nd0-13a8-4d5b-beda-ph0n3a120f71",
+                        "nintendoId": "nin0004",
+                        "type": "MOBILE",
+                        "purpose": "BOTH",
+                        "countryCode": "+1",
+                        "number": "2104892777",
+                        "lastModified": "2020-01-05T23:54:00-06:00"
+                    }
+                }
+            ]
+        }
+    }
+}

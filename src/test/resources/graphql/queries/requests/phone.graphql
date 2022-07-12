@@ -1,0 +1,11 @@
+query {
+    phones(id: "nin0004") {
+        id
+        nintendoId
+        type
+        purpose
+        countryCode
+        number
+        lastModified
+    }
+}

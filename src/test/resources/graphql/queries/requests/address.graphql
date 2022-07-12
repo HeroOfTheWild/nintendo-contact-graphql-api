@@ -1,0 +1,16 @@
+query {
+    addresses(id: "nin0001") {
+        id
+        nintendoId
+        purpose
+        country
+        stateProvince
+        cityName
+        streetAddress
+        regionCode
+        postalCode
+        startDate
+        endDate
+        lastModified
+    }
+}
