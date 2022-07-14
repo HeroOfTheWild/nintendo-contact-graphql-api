@@ -12,7 +12,7 @@ public class AsyncConfiguration {
 
     @Bean("ResolverThreadPool")
     public TaskExecutor resolverThreadPoolTaskExecutor() {
-        final ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        final var executor = new ThreadPoolTaskExecutor();
 
         executor.setThreadNamePrefix("NINTENDO ::");
         executor.setCorePoolSize(10);
