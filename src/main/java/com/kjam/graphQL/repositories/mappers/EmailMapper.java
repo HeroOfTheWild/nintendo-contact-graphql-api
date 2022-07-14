@@ -14,12 +14,10 @@ public class EmailMapper implements RowMapper<Email>{
 
     @Override
     public Email mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return Email.builder()
-                        .id(rs.getString("EMAIL_ID"))
-                        .nintendoId(rs.getString("NINTENDO_ID"))
-                        .purpose(ContactPurpose.valueOf(rs.getString("EMAIL_PURPOSE_DC")))
-                        .emailAddress(rs.getString("EMAIL_ADDRESS"))
-                        .lastModified(toZonedDateTime(rs.getTimestamp("MODIFIED")))
-                        .build();
+        return new Email(rs.getString("EMAIL_ID"),
+                rs.getString("NINTENDO_ID"),
+                ContactPurpose.valueOf(rs.getString("EMAIL_PURPOSE_DC")),
+                rs.getString("EMAIL_ADDRESS"),
+                toZonedDateTime(rs.getTimestamp("MODIFIED")));
     }
 }
