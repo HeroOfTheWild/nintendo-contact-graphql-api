@@ -65,7 +65,7 @@ public class PhoneRepository extends PaginationRepository<Phone> {
     @Override
     public List<Edge<Phone>> edge(List<Phone> phones) {
         return phones.stream()
-                    .map(phone -> new DefaultEdge<>(phone, toConnectionCursor(phone.getLastModified())))
+                    .map(phone -> new DefaultEdge<>(phone, toConnectionCursor(phone.lastModified())))
                     .collect(Collectors.toList());
     }
 
