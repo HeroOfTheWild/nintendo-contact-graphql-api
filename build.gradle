@@ -7,7 +7,11 @@ plugins {
 
 group = 'com.kjam'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
 
 configurations {
 	compileOnly {
@@ -42,7 +46,7 @@ dependencies {
 
 	// Other Dependencies
 	runtimeOnly 'com.h2database:h2'
-	testImplementation 'io.micrometer:micrometer-core:1.9.0-M4'
+	testImplementation 'commons-io:commons-io:2.11.0'
 
 	// Lombok
 	compileOnly 'org.projectlombok:lombok'

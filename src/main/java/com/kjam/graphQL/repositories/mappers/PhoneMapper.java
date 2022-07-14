@@ -15,15 +15,13 @@ public class PhoneMapper implements RowMapper<Phone>{
 
     @Override
     public Phone mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return Phone.builder()
-        .id(rs.getString("PHONE_ID"))
-        .nintendoId(rs.getString("NINTENDO_ID"))
-        .type(PhoneType.valueOf(rs.getString("PHONE_TYPE")))
-        .purpose(ContactPurpose.valueOf(rs.getString("PHONE_PURPOSE_DC")))
-        .countryCode(rs.getString("COUNTRY_CD"))
-        .number(rs.getString("PHONE_NBR"))
-        .lastModified(toZonedDateTime(rs.getTimestamp("MODIFIED")))
-        .build();
+        return new Phone(rs.getString("PHONE_ID"),
+        rs.getString("NINTENDO_ID"),
+        PhoneType.valueOf(rs.getString("PHONE_TYPE")),
+        ContactPurpose.valueOf(rs.getString("PHONE_PURPOSE_DC")),
+        rs.getString("COUNTRY_CD"),
+        rs.getString("PHONE_NBR"),
+        toZonedDateTime(rs.getTimestamp("MODIFIED")));
     }
     
 }

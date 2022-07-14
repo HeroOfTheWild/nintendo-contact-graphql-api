@@ -73,7 +73,7 @@ public class AddressRepository extends PaginationRepository<Address> {
 
     public List<Edge<Address>> edge(List<Address> addresses) {
         return addresses.stream()
-                    .map(address -> new DefaultEdge<>(address, toConnectionCursor(address.getLastModified())))
+                    .map(address -> new DefaultEdge<>(address, toConnectionCursor(address.lastModified())))
                     .collect(Collectors.toList());
     }
 

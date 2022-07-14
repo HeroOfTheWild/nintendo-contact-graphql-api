@@ -69,7 +69,7 @@ public class EmailRepository extends PaginationRepository<Email> {
     
     public List<Edge<Email>> edge(List<Email> emails) {
         return emails.stream()
-                    .map(email -> new DefaultEdge<>(email, toConnectionCursor(email.getLastModified())))
+                    .map(email -> new DefaultEdge<>(email, toConnectionCursor(email.lastModified())))
                     .collect(Collectors.toList());
     }
 
