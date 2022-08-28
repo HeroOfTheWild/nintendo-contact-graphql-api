@@ -39,7 +39,7 @@ public class MutationResolver implements GraphQLMutationResolver {
 
     public Address issueAddress(Address address) {
         var id = addressRepository.insert(address);
-        return address.updateId(id);
+        return address.addId(id);
     }
 
     public Phone issuePhone(Phone phone) {

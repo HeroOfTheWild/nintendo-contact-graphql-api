@@ -85,17 +85,14 @@ public class EmailRepository extends PaginationRepository<Email> {
                     .collect(Collectors.toList());
     }
 
-    @Override
     public String historyQuery() {
         return QUERY_EMAIL_HST_BY_NINTENDO_ID;
     }
-
-    @Override
+    
     public String historyPaginationQuery() {
         return QUERY_EMAIL_HST_PAGINATION_BY_NINTENDO_ID;
     }
 
-    @Override
     public RowMapper<Email> rowMapper() {
         return new EmailMapper();
     }

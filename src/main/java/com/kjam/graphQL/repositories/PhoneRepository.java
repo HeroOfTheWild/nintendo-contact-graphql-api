@@ -79,24 +79,20 @@ public class PhoneRepository extends PaginationRepository<Phone> {
         return resultCount > 0 ? uuid : null;
     }
 
-    @Override
     public List<Edge<Phone>> edge(List<Phone> phones) {
         return phones.stream()
                     .map(phone -> new DefaultEdge<>(phone, toConnectionCursor(phone.lastModified())))
                     .collect(Collectors.toList());
     }
 
-    @Override
     public String historyQuery() {
         return QUERY_PHONE_HST_BY_NINTENDO_ID;
     }
 
-    @Override
     public String historyPaginationQuery() {
         return QUERY_PHONE_HST_PAGINATION_BY_NINTENDO_ID;
     }
 
-    @Override
     public RowMapper<Phone> rowMapper() {
         return new PhoneMapper();
     }

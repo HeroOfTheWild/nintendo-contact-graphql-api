@@ -16,29 +16,14 @@ public record Address(String id, String nintendoId, AddressPurpose purpose, Stri
                       String postalCode, String regionCode, LocalDate startDate,
                       LocalDate endDate, ZonedDateTime lastModified) { 
 
-    public Address updateId(UUID uuid) {
-      return new Address(uuid.toString(), this.nintendoId, 
-      this.purpose, this.country, this.stateProvince, this.cityName, 
-      this.streetAddress, this.postalCode, this.regionCode, this.startDate, this.endDate, this.lastModified);
+    public Address addId(UUID uuid) {
+        return new Address(uuid.toString(), nintendoId, purpose, 
+            country, stateProvince, cityName, 
+            streetAddress, postalCode, regionCode, 
+            startDate, endDate, lastModified);
     }
 
-    public MapSqlParameterSource map() {
-        return new MapSqlParameterSource()
-            .addValue("addressId", id)
-            .addValue("nintendoId", nintendoId)
-            .addValue("purpose", purpose.name())
-            .addValue("countryCode", country)
-            .addValue("state", stateProvince)
-            .addValue("city", cityName)
-            .addValue("streetAddress", streetAddress)
-            .addValue("regionCode", postalCode)
-            .addValue("postalCode", regionCode)
-            .addValue("startDate", Date.valueOf(startDate))
-            .addValue("endDate", Date.valueOf(endDate))
-            .addValue("modified", Timestamp.valueOf(lastModified.toLocalDateTime()));
-    }
-
-    public MapSqlParameterSource insertMap(UUID uuid) {
+    public MapSqlParameterSource map(UUID uuid) {
         return new MapSqlParameterSource()
             .addValue("addressId", uuid.toString())
             .addValue("nintendoId", nintendoId)
