@@ -20,6 +20,11 @@ public class AddressQueryResolver implements GraphQLQueryResolver {
     private final AddressRepository repository;
 
     @Async("ResolverThreadPool")
+    public CompletableFuture<Address> address(String addressId) {
+        return CompletableFuture.completedFuture(repository.retrieve(addressId));
+    }
+
+    @Async("ResolverThreadPool")
     public CompletableFuture<List<Address>> addresses(String nintendoId) {
         return CompletableFuture.completedFuture(repository.retrieveAll(nintendoId));
     }

@@ -8,6 +8,7 @@ import java.time.ZonedDateTime;
 import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 import graphql.relay.Connection;
 import graphql.relay.ConnectionCursor;
@@ -32,6 +33,7 @@ public abstract class PaginationRepository<T> {
     public abstract String historyQuery();
     public abstract String historyPaginationQuery();
     public abstract RowMapper<T> rowMapper();
+    public abstract UUID insert(T t);
 
     public NamedParameterJdbcTemplate jdbcTemplate() {
         return this.namedParameterJdbcTemplate;

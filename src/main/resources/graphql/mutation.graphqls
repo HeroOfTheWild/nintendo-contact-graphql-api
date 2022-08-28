@@ -1,0 +1,14 @@
+type Mutation {
+    # Issue a new Address to an Employee
+    newAddress(address: AddressInput!) : String
+    # Issue a new Phone to an Employee
+    newPhone(phone: PhoneInput) : String
+    # Issue a new Email to an Employee
+    newEmail(email: EmailInput) : String
+    # Issue a new Address to an Employee
+    issueAddress(address: AddressInput) : Address
+    # Issue a new phone to an Employee
+    issuePhone(phone: PhoneInput) : Phone
+    # Issue a new email to an Employee
+    issueEmail(email: EmailInput) : Email
+}

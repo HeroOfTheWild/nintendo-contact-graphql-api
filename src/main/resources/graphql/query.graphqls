@@ -3,18 +3,24 @@ scalar Date
 scalar DateTime
 
 type Query {
+    # Retrieve address associated to an addressId
+    address(addressId: String!): Address
     # Retrieve all addresses associated to a Nintendo ID
-    addresses(id: NintendoId!): [Address]
+    addresses(nintendoId: NintendoId!): [Address]
     # Retrieve a Collection of Address History entries associated to a Nintendo ID that you can paginate through
-    addressHistories(id: NintendoId!, rows: Int!, before: String): addressHistoryConnection @connection (for: "Address")
+    addressHistories(nintendoId: NintendoId!, rows: Int!, before: String): addressHistoryConnection @connection (for: "Address")
 
+    # Retrieve phone associated to a phoneId
+    phone(phoneId: String!): Phone
     # Retrieve all phones associated to a Nintendo ID
-    phones(id: NintendoId!): [Phone]
+    phones(nintendoId: NintendoId!): [Phone]
     # Retrieve a Collection of Phone History entries associated to a Nintendo ID that you can paginate through
-    phoneHistories(id: NintendoId!, rows: Int!, before: String): phoneHistoryConnection @connection (for: "Phone")
+    phoneHistories(nintendoId: NintendoId!, rows: Int!, before: String): phoneHistoryConnection @connection (for: "Phone")
     
+    # Retrieve email associated to an emailId
+    email(emailId: String!): Email
     # Retrieve all emails associated to a Nintendo ID
-    emails(id: NintendoId!): [Email]
+    emails(nintendoId: NintendoId!): [Email]
     # Retrieve a Collection of Email History entries associated to a Nintendo ID that you can paginate through
-    emailHistories(id: NintendoId!, rows: Int!, before: String): emailHistoryConnection @connection (for: "Email")
+    emailHistories(nintendoId: NintendoId!, rows: Int!, before: String): emailHistoryConnection @connection (for: "Email")
 }

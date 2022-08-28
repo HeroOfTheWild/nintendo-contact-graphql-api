@@ -1,5 +1,5 @@
 query {
-    addresses(id: "nin0001") {
+    addresses(nintendoId: "nin0001") {
         id
         nintendoId
         purpose

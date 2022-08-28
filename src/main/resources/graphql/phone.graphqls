@@ -1,0 +1,23 @@
+type Phone implements Contact {
+    id: String!
+    nintendoId: String!
+    countryCode: String
+    type: PhoneType
+    purpose: ContactPurpose
+    number: String
+    lastModified: DateTime
+}
+
+input PhoneInput {
+    nintendoId: NintendoId!
+    countryCode: String
+    type: PhoneType
+    purpose: ContactPurpose
+    number: String
+}
+
+enum PhoneType {
+    MOBILE
+    HOME
+    FAX
+}

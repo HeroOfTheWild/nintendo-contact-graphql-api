@@ -1,6 +1,7 @@
 package com.kjam.graphQL.repositories;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.jdbc.core.RowMapper;
@@ -21,34 +22,44 @@ public class PhoneRepository extends PaginationRepository<Phone> {
         super(namedParameterJdbcTemplate);
     }
 
-    private static final String QUERY_PHONE_BY_NINTENDO_ID = 
-        "SELECT PHONE_ID, NINTENDO_ID, " + 
-        "PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED " + 
-        "FROM NINTENDO.PHONE " + 
-        "WHERE NINTENDO_ID = :nintendoId";
+    private static final String QUERY_PHONE_BY_NINTENDO_ID = """
+        SELECT PHONE_ID, NINTENDO_ID,   
+        PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED   
+        FROM NINTENDO.PHONE   
+        WHERE NINTENDO_ID = :nintendoId
+    """;
 
-    private static final String QUERY_PHONE_BY_ID = 
-        "SELECT PHONE_ID, NINTENDO_ID, " + 
-        "PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED " + 
-        "FROM NINTENDO.PHONE " + 
-        "WHERE PHONE_ID = :phoneId";
+    private static final String QUERY_PHONE_BY_ID = """
+        SELECT PHONE_ID, NINTENDO_ID,   
+        PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED   
+        FROM NINTENDO.PHONE   
+        WHERE PHONE_ID = :phoneId
+    """;
 
-    private static final String QUERY_PHONE_HST_BY_NINTENDO_ID = 
-        "SELECT PHONE_ID, NINTENDO_ID, " + 
-        "PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED " + 
-        "FROM NINTENDO.PHONE_HST " + 
-        "WHERE NINTENDO_ID = :nintendoId " + 
-        "ORDER BY MODIFIED DESC " + 
-        "FETCH FIRST :rowsPerPage ROWS ONLY";
+    private static final String QUERY_PHONE_HST_BY_NINTENDO_ID = """
+        SELECT PHONE_ID, NINTENDO_ID,   
+        PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED   
+        FROM NINTENDO.PHONE_HST   
+        WHERE NINTENDO_ID = :nintendoId   
+        ORDER BY MODIFIED DESC   
+        FETCH FIRST :rowsPerPage ROWS ONLY
+    """;
 
-    private static final String QUERY_PHONE_HST_PAGINATION_BY_NINTENDO_ID = 
-        "SELECT PHONE_ID, NINTENDO_ID, " + 
-        "PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED " + 
-        "FROM NINTENDO.PHONE_HST " + 
-        "WHERE NINTENDO_ID = :nintendoId " + 
-        "AND MODIFIED < :startingRow " +
-        "ORDER BY MODIFIED DESC " + 
-        "FETCH FIRST :rowsPerPage ROWS ONLY";
+    private static final String QUERY_PHONE_HST_PAGINATION_BY_NINTENDO_ID = """
+        SELECT PHONE_ID, NINTENDO_ID,   
+        PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED   
+        FROM NINTENDO.PHONE_HST   
+        WHERE NINTENDO_ID = :nintendoId   
+        AND MODIFIED < :startingRow  
+        ORDER BY MODIFIED DESC   
+        FETCH FIRST :rowsPerPage ROWS ONLY
+    """;
+
+    private static final String QUERY_INSERT_PHONE = """
+        INSERT INTO NINTENDO.PHONE 
+        (PHONE_ID, NINTENDO_ID, PHONE_TYPE, PHONE_PURPOSE_DC, COUNTRY_CD, PHONE_NBR, MODIFIED)
+        VALUES (:phoneId, :nintendoId, :type, :purpose, :countryCode, :number, :modified)
+    """;
 
     public Phone retrieve(String phoneId) {
         return jdbcTemplate().queryForObject(QUERY_PHONE_BY_ID, 
@@ -60,6 +71,12 @@ public class PhoneRepository extends PaginationRepository<Phone> {
         return jdbcTemplate().query(QUERY_PHONE_BY_NINTENDO_ID, 
             new MapSqlParameterSource("nintendoId", nintendoId), 
             new PhoneMapper());
+    }
+
+    public UUID insert(Phone phone) {
+        var uuid = UUID.randomUUID();
+        var resultCount = jdbcTemplate().update(QUERY_INSERT_PHONE, phone.map(uuid));
+        return resultCount > 0 ? uuid : null;
     }
 
     @Override

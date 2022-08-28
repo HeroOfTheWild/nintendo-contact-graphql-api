@@ -1,0 +1,31 @@
+type Address implements Contact {
+    id: String!
+    nintendoId: String!
+    purpose: AddressPurpose
+    country: String
+    stateProvince: String
+    cityName: String 
+    streetAddress: String
+    postalCode: String
+    regionCode: String
+    startDate: Date
+    endDate: Date
+    lastModified: DateTime
+}
+
+input AddressInput {
+    nintendoId: String!
+    purpose: AddressPurpose!
+    country: String!
+    stateProvince: String
+    cityName: String 
+    streetAddress: String!
+    postalCode: String
+    regionCode: String
+}
+
+enum AddressPurpose {
+    RESIDENTIAL
+    MAILING
+    BOTH
+}

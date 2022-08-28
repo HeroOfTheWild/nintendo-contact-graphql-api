@@ -14,3 +14,4 @@ graphql:
   servlet:
     mapping: /graphql
     corsEnabled: false
+    exception-handlers-enabled: true

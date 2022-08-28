@@ -1,5 +1,5 @@
 query {
-    addressHistories(id: "nin0002", rows: 2, before: "AAAAAGLFFWg=") {
+    addressHistories(nintendoId: "nin0002", rows: 2, before: "AAAAAGLFFWg=") {
         pageInfo {
             startCursor
             endCursor
