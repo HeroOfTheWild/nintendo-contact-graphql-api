@@ -20,8 +20,8 @@ public record Phone(String id, String nintendoId,
 
     public MapSqlParameterSource map(UUID uuid) {
         return new MapSqlParameterSource()
-            .addValue("phoneId", "value")
-            .addValue("nintendoId"," value")
+            .addValue("phoneId", uuid.toString())
+            .addValue("nintendoId", nintendoId)
             .addValue("type", type.name())
             .addValue("purpose", purpose.name())
             .addValue("countryCode", countryCode)

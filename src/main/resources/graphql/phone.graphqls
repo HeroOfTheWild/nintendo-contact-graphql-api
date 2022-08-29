@@ -11,8 +11,8 @@ type Phone implements Contact {
 input PhoneInput {
     nintendoId: NintendoId!
     countryCode: String
-    type: PhoneType
-    purpose: ContactPurpose
+    type: PhoneType!
+    purpose: ContactPurpose!
     number: String
 }
 
