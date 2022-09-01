@@ -1,7 +1,7 @@
 {
     "errors": [
         {
-            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'addresses'",
+            "message": "Validation error of type WrongType: argument 'nintendoId' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'addresses'",
             "locations": [
                 {
                     "line": 2,
@@ -13,7 +13,7 @@
             }
         },
         {
-            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'phones'",
+            "message": "Validation error of type WrongType: argument 'nintendoId' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'phones'",
             "locations": [
                 {
                     "line": 16,
@@ -25,7 +25,7 @@
             }
         },
         {
-            "message": "Validation error of type WrongType: argument 'id' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'emails'",
+            "message": "Validation error of type WrongType: argument 'nintendoId' with value 'StringValue{value='nin001'}' is not a valid 'NintendoId' - INVALID NINTENDO ID @ 'emails'",
             "locations": [
                 {
                     "line": 25,

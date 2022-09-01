@@ -1,0 +1,13 @@
+type Email implements Contact {
+    id: String!
+    nintendoId: String!
+    purpose: ContactPurpose
+    emailAddress: String
+    lastModified: DateTime
+}
+
+input EmailInput {
+    nintendoId: String!
+    purpose: ContactPurpose
+    emailAddress: String
+}

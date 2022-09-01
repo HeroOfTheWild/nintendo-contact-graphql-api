@@ -1,5 +1,5 @@
 query {
-    phones(id: "nin0004") {
+    phones(nintendoId: "nin0004") {
         id
         nintendoId
         type

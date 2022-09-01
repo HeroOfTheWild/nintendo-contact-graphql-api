@@ -1,5 +1,5 @@
 query {
-    emails(id: "nin0002") {
+    emails(nintendoId: "nin0002") {
         id
         emailAddress
         lastModified

@@ -8,6 +8,7 @@ import java.time.ZonedDateTime;
 import java.util.Base64;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 import graphql.relay.Connection;
 import graphql.relay.ConnectionCursor;
@@ -32,6 +33,7 @@ public abstract class PaginationRepository<T> {
     public abstract String historyQuery();
     public abstract String historyPaginationQuery();
     public abstract RowMapper<T> rowMapper();
+    public abstract UUID insert(T t);
 
     public NamedParameterJdbcTemplate jdbcTemplate() {
         return this.namedParameterJdbcTemplate;
@@ -58,7 +60,7 @@ public abstract class PaginationRepository<T> {
         return createDefaultConnection(edge(list), fetch, cursor);
     }
 
-    private <T> DefaultConnection createDefaultConnection(List<Edge<T>> edges, int rows, String cursor) {
+    private DefaultConnection<T> createDefaultConnection(List<Edge<T>> edges, int rows, String cursor) {
         var pageInfo = new DefaultPageInfo(
             startCursor(edges), 
             endCursor(edges), 
@@ -72,11 +74,11 @@ public abstract class PaginationRepository<T> {
         return Objects.isNull(value) || value.isBlank();
     }
 
-    private <T> ConnectionCursor startCursor(List<Edge<T>> edges) {
+    private ConnectionCursor startCursor(List<Edge<T>> edges) {
         return edges.isEmpty() ? null : edges.get(0).getCursor();
     }
 
-    private <T> ConnectionCursor endCursor(List<Edge<T>> edges) {
+    private ConnectionCursor endCursor(List<Edge<T>> edges) {
         return edges.isEmpty() ? null : edges.get(edges.size()-1).getCursor();
     }
 

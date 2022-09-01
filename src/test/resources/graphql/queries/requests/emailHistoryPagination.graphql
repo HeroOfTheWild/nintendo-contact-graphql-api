@@ -1,5 +1,5 @@
 query {
-    emailHistories(id: "nin0001", rows: 3, before: "AAAAAGLFFWg=") {
+    emailHistories(nintendoId: "nin0001", rows: 3, before: "AAAAAGLFFWg=") {
         pageInfo {
             startCursor
             endCursor

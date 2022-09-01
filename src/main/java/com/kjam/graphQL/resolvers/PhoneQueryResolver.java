@@ -20,6 +20,11 @@ public class PhoneQueryResolver implements GraphQLQueryResolver {
     private final PhoneRepository repository;
 
     @Async("ResolverThreadPool")
+    public CompletableFuture<Phone> phone(String phoneId) {
+        return CompletableFuture.completedFuture(repository.retrieve(phoneId));
+    }
+
+    @Async("ResolverThreadPool")
     public CompletableFuture<List<Phone>> phones(String nintendoId) {
         return CompletableFuture.completedFuture(repository.retrieveAll(nintendoId));
     }

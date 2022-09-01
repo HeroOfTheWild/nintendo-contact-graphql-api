@@ -1,5 +1,5 @@
 query {
-    phoneHistories(id: "nin0004", rows: 4) {
+    phoneHistories(nintendoId: "nin0004", rows: 4) {
         pageInfo {
             startCursor
             endCursor

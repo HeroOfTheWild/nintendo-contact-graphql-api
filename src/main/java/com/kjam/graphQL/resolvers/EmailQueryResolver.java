@@ -18,6 +18,11 @@ import lombok.AllArgsConstructor;
 public class EmailQueryResolver implements GraphQLQueryResolver {
 
     private final EmailRepository repository;
+
+    @Async("ResolverThreadPool")
+    public CompletableFuture<Email> email(String emailId) {
+        return CompletableFuture.completedFuture(repository.retrieve(emailId));
+    }
     
     @Async("ResolverThreadPool")
     public CompletableFuture<List<Email>> emails(String nintendoId) {

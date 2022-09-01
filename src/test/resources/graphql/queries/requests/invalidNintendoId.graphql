@@ -1,5 +1,5 @@
 query {
-    addresses(id: "nin001") {
+    addresses(nintendoId: "nin001") {
         id
         nintendoId
         purpose
@@ -13,7 +13,7 @@ query {
         endDate
         lastModified
     }
-    phones(id: "nin001") {
+    phones(nintendoId: "nin001") {
         id
         nintendoId
         type
@@ -22,7 +22,7 @@ query {
         number
         lastModified
     }
-    emails(id: "nin001") {
+    emails(nintendoId: "nin001") {
         id
         nintendoId
         purpose
