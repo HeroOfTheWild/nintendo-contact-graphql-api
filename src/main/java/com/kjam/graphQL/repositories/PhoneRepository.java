@@ -1,6 +1,7 @@
 package com.kjam.graphQL.repositories;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -10,6 +11,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.kjam.graphQL.entities.Phone;
+import com.kjam.graphQL.exceptions.ValidationException;
 import com.kjam.graphQL.repositories.mappers.PhoneMapper;
 
 import graphql.relay.DefaultEdge;
@@ -74,6 +76,7 @@ public class PhoneRepository extends PaginationRepository<Phone> {
     }
 
     public UUID insert(Phone phone) {
+        validatePhone(phone);
         var uuid = UUID.randomUUID();
         var resultCount = jdbcTemplate().update(QUERY_INSERT_PHONE, phone.map(uuid));
         return resultCount > 0 ? uuid : null;
@@ -95,6 +98,13 @@ public class PhoneRepository extends PaginationRepository<Phone> {
 
     public RowMapper<Phone> rowMapper() {
         return new PhoneMapper();
+    }
+
+    private boolean validatePhone(Phone phone) {
+        return Optional.ofNullable(phone.number())
+                        .filter(num -> num.matches("[0-9]{10}"))
+                        .map(n -> true)
+                        .orElseThrow(()-> new ValidationException(String.format("Unable to add a new phone entry for nintendo employee %s. Please try issuing a new Phone", phone.nintendoId())));
     }
     
 }

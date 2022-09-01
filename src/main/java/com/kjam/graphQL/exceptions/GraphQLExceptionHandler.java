@@ -14,6 +14,11 @@ public class GraphQLExceptionHandler {
         return new ThrowableGraphQLError(e);
     }
 
+    @ExceptionHandler(ValidationException.class)
+    public ThrowableGraphQLError handle(ValidationException e) {
+        return new ThrowableGraphQLError(e);
+    }
+
     @ExceptionHandler({RuntimeException.class, Exception.class})
     public ThrowableGraphQLError handle(Exception e) {
         return new ThrowableGraphQLError(e);
