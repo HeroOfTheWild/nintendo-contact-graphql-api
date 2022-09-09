@@ -23,4 +23,6 @@ type Query {
     emails(nintendoId: NintendoId!): [Email]
     # Retrieve a Collection of Email History entries associated to a Nintendo ID that you can paginate through
     emailHistories(nintendoId: NintendoId!, rows: Int!, before: String): emailHistoryConnection @connection (for: "Email")
+
+    interfaceExample(nintendoId: NintendoId!): [Contact]
 }

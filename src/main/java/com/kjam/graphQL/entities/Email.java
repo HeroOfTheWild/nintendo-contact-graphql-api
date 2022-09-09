@@ -9,7 +9,22 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 
 import com.kjam.graphQL.entities.enums.ContactPurpose;
 
-public record Email(String id, String nintendoId, ContactPurpose purpose, String emailAddress, ZonedDateTime lastModified) { 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder(toBuilder = true)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Email extends Contact { 
+
+    private String id; 
+    private String nintendoId; 
+    private ContactPurpose purpose; 
+    private String emailAddress;
+    private ZonedDateTime lastModified;
 
     public Email addId(UUID uuid) {
         return new Email(uuid.toString(), nintendoId, purpose, emailAddress, lastModified);
